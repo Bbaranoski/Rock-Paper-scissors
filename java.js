@@ -1,28 +1,27 @@
 
     function getComputerChoice(){
     
-    let random = Math.floor(Math.random() * 3);
+        let random = Math.floor(Math.random() * 3);
 
-    if(random === 0){
+        if(random === 0){
 
-         = "Rock";
+            choice = "Rock";
 
-    }else if(random === 1){
+        }else if(random === 1){
 
-         = "Paper";
+            choice = "Paper";
 
-    }else{
+        }else{
 
-         = "Scissors";
+            choice = "Scissors";
 
-    }
+        }
 
+        return choice;
 }
 
-    const computerSelection= getComputerChoice;
+    let playerChoice = prompt("A game of Rock, Paper, Scissor, whats your choice?");
 
-    console.log(computerSelection);
+  console.log(getComputerChoice());
 
-
-
-
+  console.log(playerChoice);
