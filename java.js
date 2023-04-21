@@ -1,3 +1,4 @@
+
     for(i=1; i<=5; i++){
 
     function getComputerChoice(){
@@ -17,7 +18,7 @@
             choice = "scissors";
 
         }
-        console.log(choice);
+
         return choice;
     }
 
@@ -58,7 +59,7 @@
 
                 case "paper":
 
-                    ;
+                    console.log("draw");
 
                 break;
 
@@ -137,8 +138,6 @@
     const computer = getComputerChoice();
 
     const player = getPlayerChoice();
-
-    let playerPoint
 
     game();
 
