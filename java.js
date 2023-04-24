@@ -1,6 +1,24 @@
 
 let playerSelection = "";
 
+let playerPoint = 0;
+
+let computerPoint = 0;
+
+const container = document.querySelector('.UI');
+
+const pointP = document.createElement('h2');
+
+pointP.textContent = 'Player Points: ' + playerPoint;
+
+container.appendChild(pointP);
+
+const pointC = document.createElement('h2');
+
+pointC.textContent = "Computer Points: " + computerPoint;
+
+container.appendChild(pointC);
+
 const buttons = document.querySelectorAll('button');
 
 buttons.forEach((button) => {
@@ -14,6 +32,10 @@ buttons.forEach((button) => {
         game();
 
         getComputerChoice();
+
+        pointP.textContent = 'Player Points: ' + playerPoint;
+
+        pointC.textContent = "Computer Points: " + computerPoint;
 
     }); 
 });
@@ -51,13 +73,13 @@ function game(){
 
             case "paper":
 
-                alert("draw");
+                alert("Draw");
 
             break;
 
             case "rock":
 
-                alert("win");
+                alert("You Win The Round");
 
                 playerPoint++;
 
@@ -65,7 +87,7 @@ function game(){
 
             case "scissors":
 
-                alert("lose");
+                alert("You Lose The Round");
 
                 computerPoint++;
 
@@ -81,7 +103,7 @@ function game(){
 
         case "paper":
 
-            alert("Lose");
+            alert("You Lose The Round");
 
             computerPoint++;
 
@@ -95,7 +117,7 @@ function game(){
 
         case "scissors":
 
-            alert("Win");
+            alert("You Win The Round");
 
             playerPoint++;
 
@@ -111,7 +133,7 @@ function game(){
 
         case "paper":
 
-            alert("Win");
+            alert("You Win The Round");
 
             playerPoint++;
 
@@ -119,7 +141,7 @@ function game(){
 
         case "rock":
 
-            alert("Lose");
+            alert("You Lose The Round");
 
             computerPoint++;
 
@@ -139,7 +161,7 @@ function game(){
 
     if(playerPoint >= 5){
 
-        alert("You Win");
+        alert("The Game Is Over, You Win!!!!");
     
         playerPoint = 0;
     
@@ -147,16 +169,13 @@ function game(){
     
     }else if(computerPoint >= 5){
     
-        alert("You Lose");
+        alert("You Lost For a Computer?!?!");
     
         playerPoint = 0;
     
         computerPoint = 0;
         
     }
-    
+
 }
 
-let playerPoint = 0;
-
-let computerPoint = 0;
