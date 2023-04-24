@@ -1,10 +1,24 @@
+    let playerSelection = "";
 
-    for(i=1; i<=5; i++){
+    const buttons = document.querySelectorAll('button');
+
+    buttons.forEach((button) => {
+    
+        button.addEventListener('click', () => {
+
+            playerSelection = button.id;
+
+            playerSelection = playerSelection.toLowerCase();
+
+        }); 
+    });
+
+    buttons.forEach((button) => {button.textContent = button.id});
 
     function getComputerChoice(){
     
         let random = Math.floor(Math.random() * 3);
-
+        
         if(random === 0){
 
             choice = "rock";
@@ -22,32 +36,7 @@
         return choice;
     }
 
-    function getPlayerChoice(){
-
-        let playerChoice = prompt("A game of Rock, Paper, Scissors, whats your choice?");
-
-        playerChoice = playerChoice.toLowerCase();
-
-        if(playerChoice === "rock"){
-
-            choice = "rock";
-
-        }else if(playerChoice === "paper"){
-
-            choice = "paper";
-
-        }else if(playerChoice === "scissors"){
-
-            choice = "scissors";
-
-        }else{
-
-            getPlayerChoice();
-        }
-
-        return choice;
-        
-    }
+    
 
     function game(){
 
@@ -137,8 +126,7 @@
 
     const computer = getComputerChoice();
 
-    const player = getPlayerChoice();
+    const player = playerSelection;
 
-    game();
 
-    }
+
