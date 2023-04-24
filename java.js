@@ -40,7 +40,7 @@
 
     function game(){
 
-        switch(player){
+        switch(playerSelection){
 
         case "paper":
 
@@ -126,7 +126,9 @@
 
     const computer = getComputerChoice();
 
-    const player = playerSelection;
+    let playerPoint = 0;
+
+    let computerPoint = 0;
 
 
 
