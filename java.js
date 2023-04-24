@@ -59,11 +59,15 @@ function game(){
 
                 alert("win");
 
+                playerPoint++;
+
             break;
 
             case "scissors":
 
                 alert("lose");
+
+                computerPoint++;
 
             break;
 
@@ -79,6 +83,8 @@ function game(){
 
             alert("Lose");
 
+            computerPoint++;
+
         break;
 
         case "rock":
@@ -90,6 +96,8 @@ function game(){
         case "scissors":
 
             alert("Win");
+
+            playerPoint++;
 
         break;
 
@@ -105,11 +113,15 @@ function game(){
 
             alert("Win");
 
+            playerPoint++;
+
         break;
 
         case "rock":
 
             alert("Lose");
+
+            computerPoint++;
 
         break;
 
@@ -125,4 +137,26 @@ function game(){
 
     }
 
+    if(playerPoint >= 5){
+
+        alert("You Win");
+    
+        playerPoint = 0;
+    
+        computerPoint = 0;
+    
+    }else if(computerPoint >= 5){
+    
+        alert("You Lose");
+    
+        playerPoint = 0;
+    
+        computerPoint = 0;
+        
+    }
+    
 }
+
+let playerPoint = 0;
+
+let computerPoint = 0;
