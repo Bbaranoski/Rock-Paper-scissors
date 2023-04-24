@@ -1,134 +1,128 @@
-    let playerSelection = "";
 
-    const buttons = document.querySelectorAll('button');
+let playerSelection = "";
 
-    buttons.forEach((button) => {
+const buttons = document.querySelectorAll('button');
+
+buttons.forEach((button) => {
+
+    button.addEventListener('click', () => {
+
+        playerSelection = button.id;
+
+        playerSelection = playerSelection.toLowerCase();
+
+        game();
+
+        getComputerChoice();
+
+    }); 
+});
+
+buttons.forEach((button) => {button.textContent = button.id});
+
+function getComputerChoice(){
     
-        button.addEventListener('click', () => {
-
-            playerSelection = button.id;
-
-            playerSelection = playerSelection.toLowerCase();
-
-        }); 
-    });
-
-    buttons.forEach((button) => {button.textContent = button.id});
-
-    function getComputerChoice(){
-    
-        let random = Math.floor(Math.random() * 3);
+    random = Math.floor(Math.random() * 3);
         
-        if(random === 0){
+    if(random === 0){
 
-            choice = "rock";
+        choice = "rock";
 
-        }else if(random === 1){
+    }else if(random === 1){
 
-            choice = "paper";
+        choice = "paper";
 
-        }else{
+    }else{
 
-            choice = "scissors";
+        choice = "scissors";
+
+    }
+
+    return choice;
+}
+
+function game(){
+
+    switch(playerSelection){
+
+    case "paper":
+
+        switch(getComputerChoice()){
+
+            case "paper":
+
+                alert("draw");
+
+            break;
+
+            case "rock":
+
+                alert("win");
+
+            break;
+
+            case "scissors":
+
+                alert("lose");
+
+            break;
 
         }
 
-        return choice;
-    }
+    break;
 
-    
+    case "rock":
 
-    function game(){
-
-        switch(playerSelection){
+    switch(getComputerChoice()){
 
         case "paper":
 
-            switch(computer){
-
-                case "paper":
-
-                    console.log("draw");
-
-                break;
-
-                case "rock":
-
-                    console.log("win");
-
-                break;
-
-                case "scissors":
-
-                    console.log("lose");
-
-                break;
-
-            }
+            alert("Lose");
 
         break;
 
         case "rock":
 
-        switch(computer){
-
-            case "paper":
-
-                console.log("lose");
-
-            break;
-
-            case "rock":
-
-                console.log("draw");
-
-            break;
-
-            case "scissors":
-
-                console.log("win");
-
-            break;
-
-        }
+            alert("Draw");
 
         break;
 
         case "scissors":
 
-            switch(computer){
-
-            case "paper":
-
-                console.log("win");
-
-            break;
-
-            case "rock":
-
-                console.log("lose");
-
-            break;
-
-            case "scissors":
-
-                console.log("draw");
-
-            break;
-
-        }
+            alert("Win");
 
         break;
 
-        }
+    }
+
+    break;
+
+    case "scissors":
+
+        switch(getComputerChoice()){
+
+        case "paper":
+
+            alert("Win");
+
+        break;
+
+        case "rock":
+
+            alert("Lose");
+
+        break;
+
+        case "scissors":
+
+            alert("Draw");
+
+        break;
 
     }
 
-    const computer = getComputerChoice();
+    break;
 
-    let playerPoint = 0;
+    }
 
-    let computerPoint = 0;
-
-
-
+}
